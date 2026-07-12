@@ -1,0 +1,67 @@
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\jeanl\Documents\Physics\Periodic_Table_Solver> python periodic_table_solver.py
+================================================================================
+SUNDANCE V5.4: UNIVERSAL SEGRÈ VALLEY ALGEBRAIC SOLVER RUN
+================================================================================
+Nuclide     Protons (Z)   Mass (A)    Graph Radius    Fiedler stiffness
+--------------------------------------------------------------------------------
+14-Si-28    14            28          111.0778        3.4906
+20-Ca-40    20            40          115.2185        4.0409
+26-Fe-56    26            56          129.4068        8.2498
+92-U-230    92            230         245.7626        0.0000
+92-U-238    92            238         245.7627        0.0000
+================================================================================
+PS C:\Users\jeanl\Documents\Physics\Periodic_Table_Solver> python complete_periodic_scan.py
+================================================================================
+SUNDANCE V5.4: SCANNING COMPLETE SYSTEM MANIFOLD (Z = 1 TO 118)
+================================================================================
+Traceback (most recent call last):
+  File "C:\Users\jeanl\Documents\Physics\Periodic_Table_Solver\complete_periodic_scan.py", line 123, in <module>
+    run_global_periodic_scan()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jeanl\Documents\Physics\Periodic_Table_Solver\complete_periodic_scan.py", line 108, in run_global_periodic_scan
+    graph_radius, fiedler = compute_matrix_spectral_radius(coords, loop_types)
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeanl\Documents\Physics\Periodic_Table_Solver\complete_periodic_scan.py", line 89, in compute_matrix_spectral_radius
+    return eigenvalues[-1], eigenvalues[1] # Global Radius and Fiedler Value
+                            ~~~~~~~~~~~^^^
+IndexError: index 1 is out of bounds for axis 0 with size 1
+PS C:\Users\jeanl\Documents\Physics\Periodic_Table_Solver> python complete_periodic_scan.py
+================================================================================
+SUNDANCE V5.4: SCANNING COMPLETE SYSTEM MANIFOLD (Z = 1 TO 118)
+================================================================================
+[STATUS] Successfully processed rows through Element Z = 20...
+[STATUS] Successfully processed rows through Element Z = 40...
+[STATUS] Successfully processed rows through Element Z = 60...
+[STATUS] Successfully processed rows through Element Z = 80...
+[STATUS] Successfully processed rows through Element Z = 100...
+[STATUS] Successfully processed rows through Element Z = 118...
+--------------------------------------------------------------------------------
+[SUCCESS] Global periodic table sweep complete.
+-> 582 distinct isotope matrices evaluated cleanly.
+-> Master data safely saved as 'global_segr_valley_telemetry.csv' in your workspace.
+================================================================================
+PS C:\Users\jeanl\Documents\Physics\Periodic_Table_Solver> python global_relaxed_scan.py
+================================================================================
+SUNDANCE V5.4: SCANNING COMPLETE RELAXED SYSTEM MANIFOLD (Z = 1 TO 118)
+================================================================================
+[STATUS] Successfully optimized and relaxed rows through Element Z = 10...
+[STATUS] Successfully optimized and relaxed rows through Element Z = 20...
+[STATUS] Successfully optimized and relaxed rows through Element Z = 30...
+[STATUS] Successfully optimized and relaxed rows through Element Z = 40...
+[STATUS] Successfully optimized and relaxed rows through Element Z = 50...
+[STATUS] Successfully optimized and relaxed rows through Element Z = 60...
+[STATUS] Successfully optimized and relaxed rows through Element Z = 70...
+[STATUS] Successfully optimized and relaxed rows through Element Z = 80...
+[STATUS] Successfully optimized and relaxed rows through Element Z = 90...
+[STATUS] Successfully optimized and relaxed rows through Element Z = 100...
+[STATUS] Successfully optimized and relaxed rows through Element Z = 110...
+[STATUS] Successfully optimized and relaxed rows through Element Z = 118...
+--------------------------------------------------------------------------------
+[SUCCESS] Global relaxed periodic table sweep complete.
+-> Telemetry matrix saved as 'global_relaxed_valley_telemetry.csv' in your directory.
+================================================================================
+PS C:\Users\jeanl\Documents\Physics\Periodic_Table_Solver>
