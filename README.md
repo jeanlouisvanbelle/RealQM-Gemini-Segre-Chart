@@ -1,6 +1,6 @@
 # RealQM-Gemini-Segre_Chart
 
-Vectorized parallel MatrixMechanics engine automating L-BFGS-B orientation relaxation across all 582 isotopes of the universal Segrè stability valley on consumer-grade laptop hardware.
+Vectorized parallel MatrixMechanics engine automating L-BFGS-B orientation relaxation across all 582 isotopes of the Segrè stability valley on consumer-grade laptop hardware (ASUS ROG Strix 18 G814PP).
 
 ## 🏛️ Project Framework & Anniversary Milestone
 This repository houses the final, generalized codebase of the **RealQM Strategic Modeling Program**, marking the **200th landmark research publication** by author Jean Louis Van Belle. 
